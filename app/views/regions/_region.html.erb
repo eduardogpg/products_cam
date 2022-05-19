@@ -1,0 +1,16 @@
+<%= link_to region do %>
+    <div class="pl-4 pr-6 py-4 mb-2 bg-white shadow rounded">
+        <div class="flex flex-wrap items-center -mx-4">
+            <div class="w-full md:w-3/6 mb-4 md:mb-0 px-4 flex items-center">
+                <img class="mr-3 h-6" src="artemis-assets/images/file-mp4.svg" alt="">
+                <h4 class="text-xs font-medium"><%= region.name %></h4>
+            </div>
+            <div class="w-auto ml-auto mr-16 px-4 flex items-center text-xs text-gray-500">
+                <p><%= region.places.count %> Instalaciones</p>
+            </div>
+            <div class="w-auto mr-16 px-4">
+                <p class="text-xs text-gray-500"><%= region.products.count %> Equipos</p>
+            </div>
+        </div>
+</div>
+<% end %>

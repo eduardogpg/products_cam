@@ -1,0 +1,43 @@
+<section class="py-8">
+  <div class="container px-4 mx-auto">
+    <div class="py-4 bg-white rounded">
+      <div class="flex px-6 pb-4 border-b">
+        <h3 class="text-xl font-bold"><%= @region.name %></h3>
+      </div>
+      <div class="pt-4 px-4 overflow-x-auto">
+        <table class="table-auto w-full">
+          <thead>
+            <tr class="text-xs text-gray-500 text-left">
+                <th class="font-medium">Instalación</th>
+                <th class="font-medium">N° de Productos</th>
+                <th class="font-medium">Status</th>
+                <th class="font-medium"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @places.each do |place| %>
+                <tr class="text-xs bg-gray-50">
+                
+                    <td class="flex px-4 py-3">
+                        <div>
+                        <p class="font-medium"><%= place.name %></p>
+                        </div>
+                    </td>
+                    <td class="font-medium"><%= place.products.count %></td>
+                    <td>
+                        <span class="inline-block py-1 px-2 text-white bg-green-500 rounded-full">Success</span>
+                    </td>
+                    <td>
+                        <div>
+                            <%= link_to 'Nuevo producto', new_product_path, class:'mr-2 inline-flex underline text-blue-600 hover:text-blue-800 visited:text-purple-600' %>
+                            <%= link_to 'Generar reporte', report_place_path(id:place.id), class:'inline-flex underline text-blue-600 hover:text-blue-800 visited:text-purple-600' %>
+                        </div>
+                    </td>
+                </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
